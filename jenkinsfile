@@ -10,13 +10,13 @@ pipeline{
     stages {
         stage('Checkout'){
             steps{
-                checkout scm
+                git branch: 'master', url: 'https://github.com/Galina11g/StudentsRegistryAppDemo'
             }
         }
         stage('Install Dependencies') {
             steps {
                 script{
-                    sh 'npm install'
+                    bat 'npm install'
                 }
                 
             }
@@ -24,9 +24,9 @@ pipeline{
         stage('Start Application and Run Tests') {
             steps {
                 script{
-                    sh 'npm start &'
-                    sh 'wait-on http://localhost:8090'
-                    sh 'npm test'
+                    bat 'npm start &'
+                    bat 'wait-on http://localhost:8090'
+                    bat 'npm test'
                 }
                 
                 
