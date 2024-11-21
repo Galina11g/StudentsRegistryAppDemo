@@ -28,11 +28,11 @@ pipeline{
             }
         }
         post {
-        always {
-            echo 'CI Pipeline completed.'
-        }
+            always {
+                echo 'CI Pipeline completed.'
+            }
         
-    }
+        }
     
-}
+    }
 }
