@@ -16,11 +16,17 @@ pipeline{
                 
             }
         }
-        stage('Start Application and Run Tests') {
+        stage('Start Application') {
             steps {
                 script{
                     bat 'start /b npm start'
-                    bat 'wait-on http://localhost:8080'
+                    
+                }
+            }
+        }
+         stage('Run Tests') {
+            steps {
+                script{
                     bat 'npm test'
                 }
             }
