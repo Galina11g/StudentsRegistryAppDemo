@@ -23,16 +23,13 @@ pipeline{
                     bat 'wait-on http://localhost:8090'
                     bat 'npm test'
                 }
-                
-                
             }
-        }
-        post {
-            always {
-                echo 'CI Pipeline completed.'
-            }
-        
         }
     
+    }
+    post {
+        always {
+            echo 'CI Pipeline completed.'
+        }
     }
 }
